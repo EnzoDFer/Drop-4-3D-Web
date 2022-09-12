@@ -52,10 +52,10 @@ export class BoardFace {
 
   constructor() {
     this._boardFace = [
-      Array('','','','') as IBoardCol,
-      Array('','','','') as IBoardCol,
-      Array('','','','') as IBoardCol,
-      Array('','','','') as IBoardCol,
+      ['','','',''],
+      ['','','',''],
+      ['','','',''],
+      ['','','',''],
     ];
   }
 
