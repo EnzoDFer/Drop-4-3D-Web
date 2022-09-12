@@ -71,9 +71,46 @@ export class BoardFace {
 
 
 function App() {  
-
+  const game = new Game();
   return (
     <div>
+      {game.board.cube.map((face:BoardFace,index: number)=>{
+          return <div key={`face #${index+1}`}>
+            {`face #${index+1}`}
+            <div>
+              {`[`}
+              <span>{face.boardFace[0][3-index]}</span>
+              <span>{face.boardFace[1][3-index]}</span>
+              <span>{face.boardFace[2][3-index]}</span>
+              <span>{face.boardFace[3][3-index]}</span>
+              {`]  `}
+            </div>
+            <div>
+              {`  [`}
+              <span>{face.boardFace[0][3-index]}</span>
+              <span>{face.boardFace[1][3-index]}</span>
+              <span>{face.boardFace[2][3-index]}</span>
+              <span>{face.boardFace[3][3-index]}</span>
+              {`]  `}
+            </div>
+            <div>
+              {`  [`}
+              <span>{face.boardFace[0][3-index]}</span>
+              <span>{face.boardFace[1][3-index]}</span>
+              <span>{face.boardFace[2][3-index]}</span>
+              <span>{face.boardFace[3][3-index]}</span>
+              {`]  `}
+            </div>
+            <div>
+              {`  [`}
+              <span>{face.boardFace[0][3-index]}</span>
+              <span>{face.boardFace[1][3-index]}</span>
+              <span>{face.boardFace[2][3-index]}</span>
+              <span>{face.boardFace[3][3-index]}</span>
+              {`]`}
+            </div>          
+          </div>
+      })}
     </div>
   );
 }
