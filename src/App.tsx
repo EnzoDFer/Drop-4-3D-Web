@@ -1,13 +1,23 @@
-import { useState } from "react";
-
 
 class Board {
-  
+  private _cube: [BoardFace,BoardFace,BoardFace,BoardFace];
+  public get cube() {
+    return this._cube;
+  }
+
+  constructor() {
+    this._cube = [
+      new BoardFace(),
+      new BoardFace(),
+      new BoardFace(),
+      new BoardFace()
+    ]
+  }
 }
 
 //0 first row, 1 second, etc
-type IBoardFace = [IBoardRow,IBoardRow,IBoardRow,IBoardRow];
-type IBoardRow = [IBoardItem,IBoardItem,IBoardItem,IBoardItem];
+type IBoardFace = [IBoardCol,IBoardCol,IBoardCol,IBoardCol];
+type IBoardCol = [IBoardItem,IBoardItem,IBoardItem,IBoardItem];
 type IBoardItem = string|undefined;
 
 export class BoardFace {
@@ -21,42 +31,28 @@ export class BoardFace {
 
   constructor() {
     this._boardFace = [
-      Array('','','','') as IBoardRow,
-      Array('','','','') as IBoardRow,
-      Array('','','','') as IBoardRow,
-      Array('','','','') as IBoardRow,
+      Array('','','','') as IBoardCol,
+      Array('','','','') as IBoardCol,
+      Array('','','','') as IBoardCol,
+      Array('','','','') as IBoardCol,
     ];
   }
 
-  public dropIntoRow(myArray:IBoardRow,player: string):IBoardRow {
+  public dropIntoRow(myArray:IBoardCol,player: string):IBoardCol {
     const emptyIndex: number = myArray.indexOf('');
     if (emptyIndex!==-1){
       myArray[emptyIndex] = player;
       return myArray;
     }
-    console.log(`empty index is ${emptyIndex}`);
     return myArray;
   }
 }
 
 
 function App() {  
-  const testBoardFace:BoardFace = new BoardFace();
-  const [counter,setCounter] = useState(0)
+
   return (
     <div>
-
-      <div>{testBoardFace.boardFace[3]+ ' : '+ counter}</div>
-      <button
-        onClick={()=>{
-          setCounter(counter+1)
-          testBoardFace.dropIntoRow(testBoardFace.boardFace[3],'p1')
-          console.log(testBoardFace.boardFace[3]);
-        }}
-      >
-        add p1
-      </button>
-
     </div>
   );
 }
