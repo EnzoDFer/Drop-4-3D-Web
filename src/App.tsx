@@ -1,8 +1,15 @@
 import { BoardFace } from "./BoardFace";
 import { Game } from "./Game";
+import { SimpleGrid } from '@mantine/core'
 
+const BoardFaceDisplay = () => {
 
+  return (
+    <SimpleGrid cols={4}>
 
+    </SimpleGrid>
+  );
+}
 
 
 function App() {  

@@ -4,16 +4,16 @@ import { Game } from "./Game";
 test('Can update row once', ()=> {
   const testBoardFace = new BoardFace();
   expect(testBoardFace.boardFace[0]).toStrictEqual(['','','','']);
-  testBoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
+  BoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
 });
 
 test('Can fill row and not exceed', ()=> {
   const testBoardFace = new BoardFace();
-  testBoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
-  testBoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
-  testBoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
-  testBoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
-  testBoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
+  BoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
+  BoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
+  BoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
+  BoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
+  BoardFace.dropIntoRow(testBoardFace.boardFace[0],'P1');
   expect(testBoardFace.boardFace[0]).toStrictEqual(['P1','P1','P1','P1']);
 });
 

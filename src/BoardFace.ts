@@ -18,7 +18,7 @@ export class BoardFace {
     ];
   }
 
-  public dropIntoRow(myArray:IBoardCol,player: 'P1'|'P2'):IBoardCol {
+  public static dropIntoRow(myArray:IBoardCol,player: 'P1'|'P2'):IBoardCol {
     const emptyIndex: number = myArray.indexOf('');
     if (emptyIndex!==-1){
       myArray[emptyIndex] = player;
