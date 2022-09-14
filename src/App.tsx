@@ -10,7 +10,8 @@ const BoardFaceDisplay = ({face}:{face:IBoardFace}) => {
     <SimpleGrid 
       cols={4}
       sx={{
-        gap:'1px'
+        gap:'1px',
+        width:'fit-content'
       }}
     >
       {face.map((boardCol:IBoardCol,index)=>{
@@ -38,7 +39,7 @@ const BoardColDisplay = ({column}:{column:IBoardCol}) => {
       <SimpleGrid
         cols={1}
         sx={{
-          gap:'1px'
+          gap:'1px',
         }}
       >
         {tupleToArray(col).reverse().map((boardItem:IBoardItem,index)=>{
@@ -46,7 +47,7 @@ const BoardColDisplay = ({column}:{column:IBoardCol}) => {
             <Container
               key={`face #${index}`}
               sx={{
-                height:'2rem'
+                height:'2rem',   
               }}
             >
               {boardItem}
