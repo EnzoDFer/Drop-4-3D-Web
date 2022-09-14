@@ -11,19 +11,20 @@ export class BoardFace {
 
   constructor() {
     this._boardFace = [
-      ['slot 0','slot 1','slot 2','slot 3'],
-      ['slot 4','slot 5','slot 6','slot 7'],
-      ['slot 8','slot 9','slot 10','slot 11'],
-      ['slot 12','slot 13','slot 14','slot 15'],
+      ['','','',''],
+      ['','','',''],
+      ['','','',''],
+      ['','','',''],
     ];
   }
 
   public static dropIntoRow(myArray:IBoardCol,player: 'P1'|'P2'):IBoardCol {
-    const emptyIndex: number = myArray.indexOf('');
+    const newArray: IBoardCol = [...myArray];
+    const emptyIndex: number = newArray.indexOf('');
     if (emptyIndex!==-1){
-      myArray[emptyIndex] = player;
-      return myArray;
+      newArray[emptyIndex] = player;
+      return newArray;
     }
-    return myArray;
+    return newArray;
   }
 }

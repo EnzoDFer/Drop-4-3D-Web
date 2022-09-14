@@ -1,7 +1,8 @@
 import { BoardFace } from "./BoardFace";
 import { Game } from "./Game";
-import { Button, SimpleGrid } from '@mantine/core'
+import { Button, Container, SimpleGrid } from '@mantine/core'
 import {IBoardCol, IBoardFace, IBoardItem, tupleToArray} from './Global';
+import { useState } from "react";
 
 
 const BoardFaceDisplay = ({face}:{face:IBoardFace}) => {
@@ -23,12 +24,16 @@ const BoardFaceDisplay = ({face}:{face:IBoardFace}) => {
 }
 
 const BoardColDisplay = ({column}:{column:IBoardCol}) => {
+  const [col,setCol] = useState<IBoardCol>(column);
 
   return (
     <Button
       sx={{
-        height:'fit-content'
+        height:'fit-content',
+        padding: '1rem'
+
       }}
+      onClick={()=>setCol(BoardFace.dropIntoRow(col,'P1'))}
     >
       <SimpleGrid
         cols={1}
@@ -36,10 +41,17 @@ const BoardColDisplay = ({column}:{column:IBoardCol}) => {
           gap:'1px'
         }}
       >
-        {tupleToArray(column).reverse().map((boardItem:IBoardItem,index)=>{
-          return <div
-          key={`face #${index}`}
-          >{boardItem}</div>
+        {tupleToArray(col).reverse().map((boardItem:IBoardItem,index)=>{
+          return (
+            <Container
+              key={`face #${index}`}
+              sx={{
+                height:'2rem'
+              }}
+            >
+              {boardItem}
+            </Container>
+          );
         })}
       </SimpleGrid>
     </Button>
