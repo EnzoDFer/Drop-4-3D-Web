@@ -52,14 +52,14 @@ export class BoardFace {
 
   constructor() {
     this._boardFace = [
-      ['','','',''],
-      ['','','',''],
-      ['','','',''],
-      ['','','',''],
+      ['slot 0','slot 1','slot 2','slot 3'],
+      ['slot 4','slot 5','slot 6','slot 7'],
+      ['slot 8','slot 9','slot 10','slot 11'],
+      ['slot 12','slot 13','slot 14','slot 15'],
     ];
   }
 
-  public dropIntoRow(myArray:IBoardCol,player: string):IBoardCol {
+  public dropIntoRow(myArray:IBoardCol,player: 'P1'|'P2'):IBoardCol {
     const emptyIndex: number = myArray.indexOf('');
     if (emptyIndex!==-1){
       myArray[emptyIndex] = player;
@@ -79,34 +79,34 @@ function App() {
             {`face #${index+1}`}
             <div>
               {`[`}
-              <span>{face.boardFace[0][3-index]}</span>
-              <span>{face.boardFace[1][3-index]}</span>
-              <span>{face.boardFace[2][3-index]}</span>
-              <span>{face.boardFace[3][3-index]}</span>
+              <span>{face.boardFace[0][3]}</span>|
+              <span>{face.boardFace[1][3]}</span>|
+              <span>{face.boardFace[2][3]}</span>|
+              <span>{face.boardFace[3][3]}</span>
               {`]  `}
             </div>
             <div>
               {`  [`}
-              <span>{face.boardFace[0][3-index]}</span>
-              <span>{face.boardFace[1][3-index]}</span>
-              <span>{face.boardFace[2][3-index]}</span>
-              <span>{face.boardFace[3][3-index]}</span>
+              <span>{face.boardFace[0][2]}</span>|
+              <span>{face.boardFace[1][2]}</span>|
+              <span>{face.boardFace[2][2]}</span>|
+              <span>{face.boardFace[3][2]}</span>
               {`]  `}
             </div>
             <div>
               {`  [`}
-              <span>{face.boardFace[0][3-index]}</span>
-              <span>{face.boardFace[1][3-index]}</span>
-              <span>{face.boardFace[2][3-index]}</span>
-              <span>{face.boardFace[3][3-index]}</span>
+              <span>{face.boardFace[0][1]}</span>|
+              <span>{face.boardFace[1][1]}</span>|
+              <span>{face.boardFace[2][1]}</span>|
+              <span>{face.boardFace[3][1]}</span>
               {`]  `}
             </div>
             <div>
               {`  [`}
-              <span>{face.boardFace[0][3-index]}</span>
-              <span>{face.boardFace[1][3-index]}</span>
-              <span>{face.boardFace[2][3-index]}</span>
-              <span>{face.boardFace[3][3-index]}</span>
+              <span>{face.boardFace[0][0]}</span>|
+              <span>{face.boardFace[1][0]}</span>|
+              <span>{face.boardFace[2][0]}</span>|
+              <span>{face.boardFace[3][0]}</span>
               {`]`}
             </div>          
           </div>
@@ -116,3 +116,4 @@ function App() {
 }
 
 export default App;
+
