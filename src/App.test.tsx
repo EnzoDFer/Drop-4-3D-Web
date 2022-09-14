@@ -1,4 +1,5 @@
-import { BoardFace, Game} from './App';
+import { BoardFace } from "./BoardFace";
+import { Game } from "./Game";
 
 test('Can update row once', ()=> {
   const testBoardFace = new BoardFace();
