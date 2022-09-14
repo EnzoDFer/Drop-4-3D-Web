@@ -1,25 +1,25 @@
 import { BoardFace } from "./BoardFace";
 import { Game } from "./Game";
 import { Button, SimpleGrid } from '@mantine/core'
-import {IBoardCol, IBoardItem} from './Global';
+import {IBoardCol, IBoardFace, IBoardItem, tupleToArray} from './Global';
 
 
-const BoardFaceDisplay = ({face}:{face:BoardFace}) => {
-
+const BoardFaceDisplay = ({face}:{face:IBoardFace}) => {
   return (
-    <SimpleGrid cols={4}>
-
+    <SimpleGrid 
+      cols={4}
+      sx={{
+        gap:'1px'
+      }}
+    >
+      {face.map((boardCol:IBoardCol)=>{
+        return <BoardColDisplay column={boardCol} />
+      })}
     </SimpleGrid>
   );
 }
 
 const BoardColDisplay = ({column}:{column:IBoardCol}) => {
-  function tupleToArray<T>(tuple: T[]): T[]{
-    return tuple.reduce((newArray:T[],val:T)=>{
-      newArray.unshift(val);
-      return newArray;
-    },[])
-  }
 
   return (
     <SimpleGrid 
@@ -28,7 +28,7 @@ const BoardColDisplay = ({column}:{column:IBoardCol}) => {
         gap:'1px'
       }}
     >
-      {tupleToArray(column).map((boardItem:IBoardItem)=>{
+      {tupleToArray(column).reverse().map((boardItem:IBoardItem)=>{
         return <Button>{boardItem}</Button>
       })}
     </SimpleGrid>
@@ -40,7 +40,7 @@ function App() {
   const game = new Game();
   return (
     <div>
-      <BoardColDisplay column={['slot 0','slot 1','slot 2','slot 3']}/>
+      <BoardFaceDisplay face={game.board.cube[0].boardFace}/>
       {game.board.cube.map((face:BoardFace,index: number)=>{
           return <div key={`face #${index+1}`}>
             {`face #${index+1}`}
