@@ -20,8 +20,8 @@ test('Can fill row and not exceed', ()=> {
 test('Player properly changes on call',()=>{
   const newGame = new Game();
   expect(newGame.player).toBe('P1');
-  newGame.changeTurns(); // pass turn to p2
+  newGame.processTurn(); // pass turn to p2
   expect(newGame.player).toBe('P2');
-  newGame.changeTurns(); // and back to P1
+  newGame.processTurn(); // and back to P1
   expect(newGame.player).toBe('P1');
 });

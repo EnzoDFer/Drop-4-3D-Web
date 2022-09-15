@@ -27,4 +27,11 @@ export class BoardFace {
     }
     return newArray;
   }
+
+  public static checkForFullArray(col:IBoardCol) {
+    if (col[3]==='') {
+      return false;
+    }
+    return true;
+  }
 }

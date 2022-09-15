@@ -1,6 +1,7 @@
 import { Button, SimpleGrid, Container } from "@mantine/core";
 import { useContext } from "react";
 import { GameContext } from "../App";
+import { BoardFace } from "../BoardFace";
 import { Game } from "../Game";
 import { IBoardCol, tupleToArray, IBoardItem } from "../Global";
 
@@ -8,7 +9,7 @@ export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,c
   const {game,setGame} = useContext(GameContext);
   
   function handleClick() {
-    if (column[3]==='') {
+    if (!BoardFace.checkForFullArray(column)) {
       game.updateCol(column,cubeIndex,faceIndex,game.player);
       setGame(new Game(game));
     }

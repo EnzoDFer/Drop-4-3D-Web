@@ -14,16 +14,33 @@ export class Game {
   public get board() {
     return this._board;
   }
-  public changeTurns(): void {
-    this.player==='P1'?this.player='P2':this.player='P1';
-  }
   constructor(prevGame?:Game) {
     this._player = prevGame?prevGame.player:'P1';
     this._board = prevGame?prevGame.board:new Board();
+  }
+  private changeTurns(): void {
+    this.player==='P1'?this.player='P2':this.player='P1';
   }
   public updateCol(col:IBoardCol,cubeIndex:number,faceIndex:number,player:'P1'|'P2'){
     let copy: Game = this;
     copy.board.cube[cubeIndex].boardFace[faceIndex] = BoardFace.dropIntoRow(col,player);
     return copy;
+  }
+  public processTurn() {
+    this.checkWinner();
+    this.changeTurns();
+  }
+  private checkWinner() {
+    //check for vertical col winners
+    this.board.cube.forEach((face:BoardFace)=>{
+      face.boardFace.forEach((col:IBoardCol)=>{
+        if (BoardFace.checkForFullArray(col)) {
+          this.winGame();
+        }
+      })
+    })
+  }
+  private winGame() {
+    console.log('Game Over! '+ this.player+' wins!');
   }
 }
