@@ -1,6 +1,6 @@
 import { Button, SimpleGrid, Container } from "@mantine/core";
 import { useContext } from "react";
-import { GameContext } from "../App";
+import { GameContext } from "../GameProvider";
 import { BoardFace } from "../BoardFace";
 import { Game } from "../Game";
 import { IBoardCol, tupleToArray, IBoardItem } from "../Global";
