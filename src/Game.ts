@@ -37,6 +37,7 @@ export class Game {
     this.changeTurns();
   }
   private checkWinner() {
+    //Win Checks which involve one face
     this.board.cube.forEach((face:BoardFace)=>{
       //check for vertical col winners
       face.boardFace.forEach((col:IBoardCol)=>{
@@ -51,9 +52,17 @@ export class Game {
           this.winGame();
         }
       }
-
+      //Next two check for diagonal wins although this pattern also triggers vert win check
+      let playerArray = [face.boardFace[0][0],face.boardFace[1][1],face.boardFace[2][2],,face.boardFace[3][3]];
+      if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+        this.winGame();
+      }
+      playerArray = [face.boardFace[0][3],face.boardFace[1][2],face.boardFace[2][1],,face.boardFace[3][0]];
+      if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+        this.winGame();
+      }
     })
-
+    
   }
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');
