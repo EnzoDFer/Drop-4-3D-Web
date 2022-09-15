@@ -37,14 +37,23 @@ export class Game {
     this.changeTurns();
   }
   private checkWinner() {
-    //check for vertical col winners
     this.board.cube.forEach((face:BoardFace)=>{
+      //check for vertical col winners
       face.boardFace.forEach((col:IBoardCol)=>{
         if (BoardFace.checkForFullArray(col)) {
           this.winGame();
         }
       })
+      //check for horizontal face win
+      for (let i=0;i<=3;i++) {
+        const playerArray = [face.boardFace[0][i],face.boardFace[1][i],face.boardFace[2][i],,face.boardFace[3][i]];
+        if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+          this.winGame();
+        }
+      }
+
     })
+
   }
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');
