@@ -34,9 +34,7 @@ export class Game {
   }
   public processTurn() {
     this.checkWinner();
-    if (!this.gameOver) {
-      this.changeTurns();
-    }
+    this.changeTurns();
   }
   private checkWinner() {
     //check for vertical col winners

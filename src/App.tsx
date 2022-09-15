@@ -13,7 +13,9 @@ function App() {
   const [game,setGame] = useState<Game>(new Game());
 
   useEffect(()=>{
+    if (!game.gameOver) {
     game.processTurn();
+    }
   },[game])
 
   return (
