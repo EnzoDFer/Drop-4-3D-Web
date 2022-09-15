@@ -9,7 +9,7 @@ export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,c
   const {game,setGame} = useContext(GameContext);
   
   function handleClick() {
-    if (!BoardFace.checkForFullArray(column)) {
+    if (!BoardFace.checkForFullArray(column)&&!game.gameOver) {
       game.updateCol(column,cubeIndex,faceIndex,game.player);
       setGame(new Game(game));
     }
@@ -22,7 +22,7 @@ export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,c
         padding: '1rem'
 
       }}
-      onClick={()=>handleClick()}
+      onClick={game.gameOver?()=>{}:()=>handleClick()}
     >
       <SimpleGrid
         cols={1}

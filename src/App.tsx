@@ -12,7 +12,9 @@ export const GameContext = createContext<{ game: Game, setGame: (newGame:Game)=>
 function App() {  
   const [game,setGame] = useState<Game>(new Game());
 
-  useEffect(()=>game.processTurn(),[game])
+  useEffect(()=>{
+    game.processTurn();
+  },[game])
 
   return (
     <GameContext.Provider value={{game,setGame}}>

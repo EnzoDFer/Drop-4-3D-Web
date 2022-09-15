@@ -5,6 +5,7 @@ import { IBoardCol } from "./Global";
 export class Game {
   private _player: 'P1' | 'P2';
   private _board: Board;
+  private _gameOver: boolean;
   public get player() {
     return this._player;
   }
@@ -14,21 +15,28 @@ export class Game {
   public get board() {
     return this._board;
   }
+  public get gameOver(){
+    return this._gameOver
+  }
+  private set gameOver(won:boolean){
+    this._gameOver=won;
+  }
   constructor(prevGame?:Game) {
     this._player = prevGame?prevGame.player:'P1';
     this._board = prevGame?prevGame.board:new Board();
+    this._gameOver = prevGame?prevGame.gameOver:false;
   }
   private changeTurns(): void {
     this.player==='P1'?this.player='P2':this.player='P1';
   }
   public updateCol(col:IBoardCol,cubeIndex:number,faceIndex:number,player:'P1'|'P2'){
-    let copy: Game = this;
-    copy.board.cube[cubeIndex].boardFace[faceIndex] = BoardFace.dropIntoRow(col,player);
-    return copy;
+    this.board.cube[cubeIndex].boardFace[faceIndex] = BoardFace.dropIntoRow(col,player);
   }
   public processTurn() {
     this.checkWinner();
-    this.changeTurns();
+    if (!this.gameOver) {
+      this.changeTurns();
+    }
   }
   private checkWinner() {
     //check for vertical col winners
@@ -42,5 +50,6 @@ export class Game {
   }
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');
+    this.gameOver=true;
   }
 }
