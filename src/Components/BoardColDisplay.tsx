@@ -8,8 +8,10 @@ export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,c
   const {game,setGame} = useContext(GameContext);
   
   function handleClick() {
-    game.updateCol(column,cubeIndex,faceIndex,'P2');
-    setGame(new Game(game));
+    if (column[3]==='') {
+      game.updateCol(column,cubeIndex,faceIndex,game.player);
+      setGame(new Game(game));
+    }
   }
   
   return (

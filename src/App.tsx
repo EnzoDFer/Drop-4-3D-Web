@@ -1,6 +1,6 @@
 import { BoardFace } from "./BoardFace";
 import { Game } from "./Game";
-import { Context, createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { BoardFaceDisplay } from "./Components/BoardFaceDisplay";
 
 
@@ -11,6 +11,9 @@ export const GameContext = createContext<{ game: Game, setGame: (newGame:Game)=>
 
 function App() {  
   const [game,setGame] = useState<Game>(new Game());
+
+  useEffect(()=>game.changeTurns(),[game])
+  
   return (
     <GameContext.Provider value={{game,setGame}}>
       <div>
