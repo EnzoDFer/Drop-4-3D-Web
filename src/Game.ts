@@ -47,22 +47,75 @@ export class Game {
       })
       //check for horizontal face win
       for (let i=0;i<=3;i++) {
-        const playerArray = [face.boardFace[0][i],face.boardFace[1][i],face.boardFace[2][i],,face.boardFace[3][i]];
+        const playerArray = [face.boardFace[0][i],face.boardFace[1][i],face.boardFace[2][i],face.boardFace[3][i]];
         if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
           this.winGame();
         }
       }
       //Next two check for diagonal wins although this pattern also triggers vert win check
-      let playerArray = [face.boardFace[0][0],face.boardFace[1][1],face.boardFace[2][2],,face.boardFace[3][3]];
+      let playerArray = [face.boardFace[0][0],face.boardFace[1][1],face.boardFace[2][2],face.boardFace[3][3]];
       if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
         this.winGame();
       }
-      playerArray = [face.boardFace[0][3],face.boardFace[1][2],face.boardFace[2][1],,face.boardFace[3][0]];
+      playerArray = [face.boardFace[0][3],face.boardFace[1][2],face.boardFace[2][1],face.boardFace[3][0]];
       if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
         this.winGame();
       }
     })
-    
+    //multi-face win checks
+    //horizontal multi face
+    for (let j = 0; j < this.board.cube[0].boardFace[0].length;j++) {
+      for (let i=0;i<=3;i++) {
+        //check for one side multi face win
+        let playerArray = [
+          this.board.cube[0].boardFace[j][i],
+          this.board.cube[1].boardFace[j][i],
+          this.board.cube[2].boardFace[j][i],
+          this.board.cube[3].boardFace[j][i],
+        ]
+        if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+          this.winGame();
+        }
+      }
+    }
+    //diagonal win check across mult faces
+    let playerArray = [
+      this.board.cube[0].boardFace[0][0],
+      this.board.cube[1].boardFace[0][1],
+      this.board.cube[2].boardFace[0][2],
+      this.board.cube[3].boardFace[0][3],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    playerArray = [
+      this.board.cube[0].boardFace[0][3],
+      this.board.cube[1].boardFace[0][2],
+      this.board.cube[2].boardFace[0][1],
+      this.board.cube[3].boardFace[0][0],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    playerArray = [
+      this.board.cube[0].boardFace[3][0],
+      this.board.cube[1].boardFace[3][1],
+      this.board.cube[2].boardFace[3][2],
+      this.board.cube[3].boardFace[3][3],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    playerArray = [
+      this.board.cube[0].boardFace[3][3],
+      this.board.cube[1].boardFace[3][2],
+      this.board.cube[2].boardFace[3][1],
+      this.board.cube[3].boardFace[3][0],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    //end diag win check across mult faces
   }
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');
