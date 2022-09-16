@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Container } from "@mantine/core";
+import { Button, SimpleGrid } from "@mantine/core";
 import { useContext } from "react";
 import { GameContext } from "../GameProvider";
 import { BoardFace } from "../BoardFace";

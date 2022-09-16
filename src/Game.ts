@@ -42,7 +42,10 @@ export class Game {
       //check for vertical col winners
       face.boardFace.forEach((col:IBoardCol)=>{
         if (BoardFace.checkForFullArray(col)) {
-          this.winGame();
+          console.log(col);
+          if (col.every((player)=>player===col[0]&&player!=='')){
+            this.winGame();
+          }
         }
       })
       //check for horizontal face win
@@ -52,7 +55,7 @@ export class Game {
           this.winGame();
         }
       }
-      //Next two check for diagonal wins although this pattern also triggers vert win check
+      //Next two check for diagonal wins 
       let playerArray = [face.boardFace[0][0],face.boardFace[1][1],face.boardFace[2][2],face.boardFace[3][3]];
       if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
         this.winGame();
