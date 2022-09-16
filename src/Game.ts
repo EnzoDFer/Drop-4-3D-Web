@@ -82,41 +82,25 @@ export class Game {
       }
     }
     //diagonal win check across mult faces
-    let playerArray = [
-      this.board.cube[0].boardFace[0][0],
-      this.board.cube[1].boardFace[0][1],
-      this.board.cube[2].boardFace[0][2],
-      this.board.cube[3].boardFace[0][3],
-    ]
-    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
-      this.winGame();
-    }
-    playerArray = [
-      this.board.cube[0].boardFace[0][3],
-      this.board.cube[1].boardFace[0][2],
-      this.board.cube[2].boardFace[0][1],
-      this.board.cube[3].boardFace[0][0],
-    ]
-    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
-      this.winGame();
-    }
-    playerArray = [
-      this.board.cube[0].boardFace[3][0],
-      this.board.cube[1].boardFace[3][1],
-      this.board.cube[2].boardFace[3][2],
-      this.board.cube[3].boardFace[3][3],
-    ]
-    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
-      this.winGame();
-    }
-    playerArray = [
-      this.board.cube[0].boardFace[3][3],
-      this.board.cube[1].boardFace[3][2],
-      this.board.cube[2].boardFace[3][1],
-      this.board.cube[3].boardFace[3][0],
-    ]
-    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
-      this.winGame();
+    for (let j = 0; j < this.board.cube[0].boardFace[0].length;j++) {
+      let playerArray = [
+        this.board.cube[0].boardFace[j][0],
+        this.board.cube[1].boardFace[j][1],
+        this.board.cube[2].boardFace[j][2],
+        this.board.cube[3].boardFace[j][3],
+      ]
+      if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+        this.winGame();
+      }
+       playerArray = [
+        this.board.cube[0].boardFace[j][0],
+        this.board.cube[1].boardFace[j][1],
+        this.board.cube[2].boardFace[j][2],
+        this.board.cube[3].boardFace[j][3],
+      ]
+      if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+        this.winGame();
+      }
     }
     //end diag win check across mult faces
   }

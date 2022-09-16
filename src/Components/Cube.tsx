@@ -16,6 +16,7 @@ export const Cube = ({BoardItem}:{BoardItem:IBoardItem}) => {
           height:'100%',
           backgroundColor:BoardItem===''?'transparent':
             BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+          border:'1px solid black'
         }}
       />
     );
