@@ -4,6 +4,7 @@ import { GameContext } from "../GameProvider";
 import { BoardFace } from "../BoardFace";
 import { Game } from "../Game";
 import { IBoardCol, tupleToArray, IBoardItem } from "../Global";
+import { Cube } from "./Cube";
 
 export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,cubeIndex:number,faceIndex:number}) => {
   const {game,setGame} = useContext(GameContext);
@@ -19,7 +20,12 @@ export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,c
     <Button
       sx={{
         height:'fit-content',
-        padding: '1rem'
+        background:'white',
+        border:'1px solid black',
+        padding: '0',
+        '&:hover':{
+          background:'white',
+        }
 
       }}
       onClick={game.gameOver?()=>{}:()=>handleClick()}
@@ -32,14 +38,7 @@ export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,c
       >
         {tupleToArray(column).reverse().map((boardItem:IBoardItem,index)=>{
           return (
-            <Container
-              key={`face #${index}`}
-              sx={{
-                height:'2rem',   
-              }}
-            >
-              {boardItem}
-            </Container>
+            <Cube BoardItem={boardItem} key={`face #${index}`}/>
           );
         })}
       </SimpleGrid>
