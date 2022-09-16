@@ -1,0 +1,18 @@
+.top {
+  transform: rotateX( 90deg) translateZ(25px);
+}
+.bottom {
+  transform: rotateX( -90deg) translateZ(25px);
+}
+.right {
+  transform: rotateY( 90deg) translateZ(25px);
+}
+.left {
+  transform: rotateY( -90deg) translateZ(25px);
+}
+.front {
+  transform: rotateY( 0deg) translateZ(25px);
+}
+.back {
+  transform: rotateY( 180deg) translateZ(25px);
+}
