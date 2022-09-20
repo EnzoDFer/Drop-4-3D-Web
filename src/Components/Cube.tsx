@@ -12,12 +12,12 @@ export const Cube = ({BoardItem}:{BoardItem:IBoardItem}) => {
     sideComponents.push(
       <Container 
         key={`side ${i}`}
-        className={sides[i]}
+        className={'cube'+sides[i]}
         sx={{
           position:'absolute',
           width:'50px',
           height:'50px',
-          backgroundColor:BoardItem===''?'transparent':
+          backgroundColor:BoardItem===''?'':
             BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
           border:'1px solid black'
         }}
@@ -25,26 +25,18 @@ export const Cube = ({BoardItem}:{BoardItem:IBoardItem}) => {
     );
   }
   return (
-    <Container
-      sx={{
-        width:'50px',
-        height:'50px',
-        perspective: '150px',
-        padding: '0',
-        margin: '0'
-      }}
-    >
       <Container
+        id='Cube'
         sx={{
-          width:'100%',
-          height:'100%',
+          width:'50px',
+          height:'50px',
           padding: '0',
           transformStyle: 'preserve-3d',
+          transform: 'translateZ(25px)',
           position: 'relative'
         }}
       >
         {sideComponents}
       </Container>
-    </Container>
   );
 }

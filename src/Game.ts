@@ -42,7 +42,6 @@ export class Game {
       //check for vertical col winners
       face.boardFace.forEach((col:IBoardCol)=>{
         if (BoardFace.checkForFullArray(col)) {
-          console.log(col);
           if (col.every((player)=>player===col[0]&&player!=='')){
             this.winGame();
           }

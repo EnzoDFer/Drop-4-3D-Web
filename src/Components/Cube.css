@@ -1,18 +1,18 @@
-.top {
+.cubetop {
   transform: rotateX( 90deg) translateZ(25px);
 }
-.bottom {
+.cubebottom {
   transform: rotateX( -90deg) translateZ(25px);
 }
-.right {
+.cuberight {
   transform: rotateY( 90deg) translateZ(25px);
 }
-.left {
+.cubeleft {
   transform: rotateY( -90deg) translateZ(25px);
 }
-.front {
+.cubefront {
   transform: rotateY( 0deg) translateZ(25px);
 }
-.back {
+.cubeback {
   transform: rotateY( 180deg) translateZ(25px);
 }
