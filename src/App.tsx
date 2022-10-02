@@ -8,8 +8,8 @@ import { boardLength, cubeSideLength,boardColNum } from "./Global";
 function App() {  
 
   return (
-    //<GameProvider/>
-    <Container
+    <GameProvider/>
+    /*<Container
       //cube Container
       sx={{
         position:'relative',
@@ -37,7 +37,7 @@ function App() {
           transform:`translateZ(${3*cubeSideLength}px)`,
         }}
       />
-    </Container>
+    </Container>*/
   );
 }
 

@@ -3,6 +3,7 @@ import { Game } from "./Game";
 import { createContext, useEffect, useState } from "react";
 import { BoardFaceDisplay } from "./Components/BoardFaceDisplay";
 import { Container } from "@mantine/core";
+import { boardLength, cubeSideLength } from "./Global";
 
 
 export const GameContext = createContext<{ game: Game, setGame: (newGame:Game)=>void }>({
@@ -22,26 +23,23 @@ export function GameProvider() {
   return (
     <GameContext.Provider value={{game,setGame}}>
       <Container
-        //onClick={(e)=>e.currentTarget.style.transform='rotateY(90deg)'}
+        //cube Container
         sx={{
-          transformStyle: 'preserve-3d',
+          position:'relative',
+          height:`${boardLength}px`,
+          width:`${boardLength}px`,
         }}
       >
-        {game.board.cube.map((face:BoardFace,index: number)=>{
+       {game.board.cube.map((face:BoardFace,index: number)=>{
             return ( 
-              <div key={`face #${index+1}`}>
-                {`face #${index+1}`}
-                <BoardFaceDisplay
-                  //face={face.boardFace}
-                  //cubeIndex={index}
-                />
-              </div>
+              <BoardFaceDisplay
+                boardFace={face.boardFace}
+                sxProp={{
+                  transform:`translateZ(${index*cubeSideLength}px)`,
+                }}
+              />
             );
         })}
-        <BoardFaceDisplay
-                  //face={game.board.cube[0].boardFace}
-                  //cubeIndex={0}
-                />
       </Container>
     </GameContext.Provider>
   );

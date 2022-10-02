@@ -2,21 +2,21 @@ import { Container, SimpleGrid, Sx } from "@mantine/core";
 import { IBoardFace, IBoardCol, boardLength } from "../Global";
 import { BoardColDisplay } from "./BoardColDisplay";
 
-export const BoardFaceDisplay = ({sxProp}:{sxProp?:Sx | (Sx | undefined)[] | undefined}) => {
+export const BoardFaceDisplay = ({sxProp,boardFace}:{sxProp?:Sx | (Sx | undefined)[] | undefined,boardFace:IBoardFace}) => {
   return (
     <Container
       sx={{
         position:'absolute',
-        padding: '0',
         height:`${boardLength}px`,
         width:`${boardLength}px`,
         ...sxProp,
       }}
     >
-      <BoardColDisplay />
-      <BoardColDisplay />
-      <BoardColDisplay />
-      <BoardColDisplay />
+      {boardFace.map((boardCol)=>{
+        return (
+          <BoardColDisplay boardCol={boardCol}/>
+        );
+      })}
     </Container>
 
   );

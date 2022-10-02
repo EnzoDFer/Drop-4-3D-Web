@@ -4,7 +4,7 @@ import { IBoardItem,cubeSideLength } from "../Global"
 const PASTEL_BLUE = '#8BD3E6';
 const PASTEL_RED = '#FF6D6A';
 
-export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undefined,BoardItem:IBoardItem}) => {
+export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undefined,boardItem:IBoardItem}) => {
   return (
       <Container
         id='Cube'
@@ -22,8 +22,8 @@ export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //front
           sx={{
             border:'1px solid black',
-            background:BoardItem===''?'':
-              BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            background:boardItem===''?'':
+              boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,
@@ -34,8 +34,8 @@ export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //right
           sx={{
             border:'1px solid black',
-            background:BoardItem===''?'':
-              BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            background:boardItem===''?'':
+              boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,
@@ -46,8 +46,8 @@ export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //back
           sx={{
             border:'1px solid black',
-           background:BoardItem===''?'':
-            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+           background:boardItem===''?'':
+            boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,
@@ -58,8 +58,8 @@ export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //left
           sx={{
             border:'1px solid black',
-           background:BoardItem===''?'':
-            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+           background:boardItem===''?'':
+            boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,
@@ -70,8 +70,8 @@ export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //top
           sx={{
             border:'1px solid black',
-          background:BoardItem===''?'':
-            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+          background:boardItem===''?'':
+            boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,
@@ -82,8 +82,8 @@ export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //bottom
           sx={{
             border:'1px solid black',
-            background:BoardItem===''?'':
-              BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            background:boardItem===''?'':
+              boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,

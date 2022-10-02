@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { GameContext } from "../GameProvider";
 import { BoardFace } from "../BoardFace";
 import { Game } from "../Game";
-import { IBoardCol, boardColNum, boardLength, cubeSideLength } from "../Global";
+import { IBoardCol, boardColNum, boardLength, cubeSideLength, IBoardItem } from "../Global";
 import { Cube } from "./Cube";
 
-export const BoardColDisplay = () => {
+export const BoardColDisplay = ({boardCol}:{boardCol:IBoardCol}) => {
   /*const {game,setGame} = useContext(GameContext);
   
   function handleClick() {
@@ -22,7 +22,6 @@ export const BoardColDisplay = () => {
         all:'unset',
         cursor:'pointer',
         height:'fit-content',
-        padding: '0',
         '&:hover':{
           background:'white',
         }
@@ -37,27 +36,17 @@ export const BoardColDisplay = () => {
           width:`${cubeSideLength}px`
         }}
       >
-        <Cube BoardItem="P1"
-          sxProp={{
-            marginTop:`${0*boardLength/boardColNum}px`,
-          }}
-        />
-        <Cube BoardItem="P1"
-          sxProp={{
-            marginTop:`${1*boardLength/boardColNum}px`,
-          }}
-        />
-        <Cube BoardItem="P1"
-          sxProp={{
-            marginTop:`${2*boardLength/boardColNum}px`,
-          }}
-        />
-        <Cube BoardItem="P1"
-          sxProp={{
-            marginTop:`${3*boardLength/boardColNum}px`,
-          }}
-        />
-    </Container>
+        {boardCol.map((player,index)=>{
+          return (
+            <Cube 
+              boardItem={player}
+              sxProp={{
+                marginTop:`${index*boardLength/boardColNum}px`,
+              }}
+            />
+          );
+        })}
+      </Container>
     </Button>
   );
 }
