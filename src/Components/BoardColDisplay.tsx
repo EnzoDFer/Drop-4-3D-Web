@@ -20,6 +20,7 @@ export const BoardColDisplay = () => {
     <Button
       sx={{
         all:'unset',
+        cursor:'pointer',
         height:'fit-content',
         padding: '0',
         '&:hover':{

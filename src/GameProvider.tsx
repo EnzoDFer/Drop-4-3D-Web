@@ -27,20 +27,20 @@ export function GameProvider() {
           transformStyle: 'preserve-3d',
         }}
       >
-        {/*game.board.cube.map((face:BoardFace,index: number)=>{
+        {game.board.cube.map((face:BoardFace,index: number)=>{
             return ( 
               <div key={`face #${index+1}`}>
                 {`face #${index+1}`}
                 <BoardFaceDisplay
-                  face={face.boardFace}
-                  cubeIndex={index}
+                  //face={face.boardFace}
+                  //cubeIndex={index}
                 />
               </div>
             );
-        })*/}
+        })}
         <BoardFaceDisplay
-                  face={game.board.cube[0].boardFace}
-                  cubeIndex={0}
+                  //face={game.board.cube[0].boardFace}
+                  //cubeIndex={0}
                 />
       </Container>
     </GameContext.Provider>
