@@ -1,42 +1,95 @@
-import { Container } from "@mantine/core";
-import { IBoardItem } from "../Global"
-import './Cube.css'
+import { Container, Sx } from "@mantine/core";
+import { IBoardItem,cubeSideLength } from "../Global"
 
 const PASTEL_BLUE = '#8BD3E6';
 const PASTEL_RED = '#FF6D6A';
 
-export const Cube = ({BoardItem}:{BoardItem:IBoardItem}) => {
-  const sides: string[] = ['top','right','bottom','left','front','back']
-  const sideComponents: JSX.Element[] = [];
-  for (let i = 0; i<sides.length;i++) {
-    sideComponents.push(
-      <Container 
-        key={`side ${i}`}
-        className={'cube'+sides[i]}
-        sx={{
-          position:'absolute',
-          width:'50px',
-          height:'50px',
-          backgroundColor:BoardItem===''?'':
-            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
-          border:'1px solid black'
-        }}
-      />
-    );
-  }
+export const Cube = ({sxProp,BoardItem}:{sxProp?:Sx | (Sx | undefined)[] | undefined,BoardItem:IBoardItem}) => {
   return (
       <Container
         id='Cube'
         sx={{
-          width:'50px',
-          height:'50px',
+          width:`${cubeSideLength}px`,
+          height:`${cubeSideLength}px`,
           padding: '0',
           transformStyle: 'preserve-3d',
-          transform: 'translateZ(25px)',
-          position: 'relative'
+          transform: 'translateZ(0px)',
+          position: 'absolute',
+          ...sxProp,
         }}
       >
-        {sideComponents}
+        <Container
+          //front
+          sx={{
+            border:'1px solid black',
+            background:BoardItem===''?'':
+              BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            position:'absolute',
+            width:`100%`,
+            height:`100%`,
+            transform:`translateZ(${cubeSideLength/2}px)`,
+          }}
+        />
+        <Container
+          //right
+          sx={{
+            border:'1px solid black',
+            background:BoardItem===''?'':
+              BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            position:'absolute',
+            width:`100%`,
+            height:`100%`,
+            transform:`translateX(50%) rotateY(90deg)`
+          }}
+        />
+        <Container
+          //back
+          sx={{
+            border:'1px solid black',
+           background:BoardItem===''?'':
+            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            position:'absolute',
+            width:`100%`,
+            height:`100%`,
+            transform:`translateZ(${-cubeSideLength/2}px) rotateY(180deg)`
+          }}
+        />
+        <Container
+          //left
+          sx={{
+            border:'1px solid black',
+           background:BoardItem===''?'':
+            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            position:'absolute',
+            width:`100%`,
+            height:`100%`,
+            transform:`translateX(-50%) rotateY(-90deg)`
+          }}
+        />
+        <Container
+          //top
+          sx={{
+            border:'1px solid black',
+          background:BoardItem===''?'':
+            BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            position:'absolute',
+            width:`100%`,
+            height:`100%`,
+            transform:`translateY(-50%) rotateX(90deg)`
+          }}
+        />
+        <Container
+          //bottom
+          sx={{
+            border:'1px solid black',
+            background:BoardItem===''?'':
+              BoardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
+            position:'absolute',
+            width:`100%`,
+            height:`100%`,
+            transform:`translateY(50%) rotateX(-90deg)`
+          }}
+        />
       </Container>
   );
 }
