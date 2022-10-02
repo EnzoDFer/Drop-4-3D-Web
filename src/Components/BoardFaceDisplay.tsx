@@ -2,7 +2,7 @@ import { Container, SimpleGrid, Sx } from "@mantine/core";
 import { IBoardFace, IBoardCol, boardLength } from "../Global";
 import { BoardColDisplay } from "./BoardColDisplay";
 
-export const BoardFaceDisplay = ({sxProp,boardFace}:{sxProp?:Sx | (Sx | undefined)[] | undefined,boardFace:IBoardFace}) => {
+export const BoardFaceDisplay = ({sxProp,boardFace,faceIndex}:{sxProp?:Sx | (Sx | undefined)[] | undefined,boardFace:IBoardFace,faceIndex:number}) => {
   return (
     <Container
       sx={{
@@ -12,9 +12,13 @@ export const BoardFaceDisplay = ({sxProp,boardFace}:{sxProp?:Sx | (Sx | undefine
         ...sxProp,
       }}
     >
-      {boardFace.map((boardCol)=>{
+      {boardFace.map((boardCol,index)=>{
         return (
-          <BoardColDisplay boardCol={boardCol}/>
+          <BoardColDisplay 
+            boardCol={boardCol}
+            faceIndex={faceIndex}
+            colIndex={index}
+          />
         );
       })}
     </Container>

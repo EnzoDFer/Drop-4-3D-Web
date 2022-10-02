@@ -34,6 +34,7 @@ export function GameProvider() {
             return ( 
               <BoardFaceDisplay
                 boardFace={face.boardFace}
+                faceIndex={index}
                 sxProp={{
                   transform:`translateZ(${index*cubeSideLength}px)`,
                 }}

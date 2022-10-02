@@ -6,15 +6,15 @@ import { Game } from "../Game";
 import { IBoardCol, boardColNum, boardLength, cubeSideLength, IBoardItem } from "../Global";
 import { Cube } from "./Cube";
 
-export const BoardColDisplay = ({boardCol}:{boardCol:IBoardCol}) => {
-  /*const {game,setGame} = useContext(GameContext);
+export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCol,colIndex:number,faceIndex:number}) => {
+  const {game,setGame} = useContext(GameContext);
   
   function handleClick() {
-    if (!BoardFace.checkForFullArray(column)&&!game.gameOver) {
-      game.updateCol(column,cubeIndex,faceIndex,game.player);
+    if (!BoardFace.checkForFullArray(boardCol)&&!game.gameOver) {
+      game.updateCol(boardCol,colIndex,faceIndex,game.player);
       setGame(new Game(game));
     }
-  }*/
+  }
   
   return (
     <Button
@@ -27,7 +27,7 @@ export const BoardColDisplay = ({boardCol}:{boardCol:IBoardCol}) => {
         }
 
       }}
-      //onClick={game.gameOver?()=>{}:()=>handleClick()}
+      onClick={game.gameOver?()=>{}:()=>handleClick()}
     >
       <Container
         //container
