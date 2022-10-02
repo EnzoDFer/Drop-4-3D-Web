@@ -13,12 +13,12 @@ export const BoardFaceDisplay = ({face,cubeIndex}:{face:IBoardFace,cubeIndex:num
     >
       {face.map((boardCol:IBoardCol,index)=>{
         return (
-          <BoardColDisplay 
+          <BoardColDisplay /*
             column={boardCol} 
             faceIndex={index}
             cubeIndex={cubeIndex}
             key={`face #${index}`}
-          />
+          *//>
         );
       })}
     </SimpleGrid>

@@ -1,47 +1,62 @@
-import { Button, SimpleGrid } from "@mantine/core";
+import { Button, Container } from "@mantine/core";
 import { useContext } from "react";
 import { GameContext } from "../GameProvider";
 import { BoardFace } from "../BoardFace";
 import { Game } from "../Game";
-import { IBoardCol, tupleToArray, IBoardItem } from "../Global";
+import { IBoardCol, boardColNum, boardLength, cubeSideLength } from "../Global";
 import { Cube } from "./Cube";
 
-export const BoardColDisplay = ({column,cubeIndex,faceIndex}:{column:IBoardCol,cubeIndex:number,faceIndex:number}) => {
-  const {game,setGame} = useContext(GameContext);
+export const BoardColDisplay = () => {
+  /*const {game,setGame} = useContext(GameContext);
   
   function handleClick() {
     if (!BoardFace.checkForFullArray(column)&&!game.gameOver) {
       game.updateCol(column,cubeIndex,faceIndex,game.player);
       setGame(new Game(game));
     }
-  }
+  }*/
   
   return (
     <Button
       sx={{
+        all:'unset',
         height:'fit-content',
-        background:'white',
-        border:'1px solid black',
         padding: '0',
         '&:hover':{
           background:'white',
         }
 
       }}
-      onClick={game.gameOver?()=>{}:()=>handleClick()}
+      //onClick={game.gameOver?()=>{}:()=>handleClick()}
     >
-      <SimpleGrid
-        cols={1}
+      <Container
+        //container
         sx={{
-          gap:'1px',
+          height:`${boardLength}px`,
+          width:`${cubeSideLength}px`
         }}
       >
-        {tupleToArray(column).reverse().map((boardItem:IBoardItem,index)=>{
-          return (
-            <Cube BoardItem={boardItem} key={`face #${index}`}/>
-          );
-        })}
-      </SimpleGrid>
+        <Cube BoardItem="P1"
+          sxProp={{
+            marginTop:`${0*boardLength/boardColNum}px`,
+          }}
+        />
+        <Cube BoardItem="P1"
+          sxProp={{
+            marginTop:`${1*boardLength/boardColNum}px`,
+          }}
+        />
+        <Cube BoardItem="P1"
+          sxProp={{
+            marginTop:`${2*boardLength/boardColNum}px`,
+          }}
+        />
+        <Cube BoardItem="P1"
+          sxProp={{
+            marginTop:`${3*boardLength/boardColNum}px`,
+          }}
+        />
+    </Container>
     </Button>
   );
 }
