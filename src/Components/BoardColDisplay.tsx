@@ -41,7 +41,7 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
             <Cube 
               boardItem={player}
               sxProp={{
-                marginTop:`${index*boardLength/boardColNum}px`,
+                marginTop:`${(3-index)*boardLength/boardColNum}px`,
               }}
             />
           );

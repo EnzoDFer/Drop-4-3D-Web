@@ -23,24 +23,33 @@ export function GameProvider() {
   return (
     <GameContext.Provider value={{game,setGame}}>
       <Container
-        //cube Container
+        //scene
         sx={{
-          position:'relative',
           height:`${boardLength}px`,
           width:`${boardLength}px`,
         }}
       >
-       {game.board.cube.map((face:BoardFace,index: number)=>{
-            return ( 
-              <BoardFaceDisplay
-                boardFace={face.boardFace}
-                faceIndex={index}
-                sxProp={{
-                  transform:`translateZ(${index*cubeSideLength}px)`,
-                }}
-              />
-            );
-        })}
+        <Container
+          //cube Container
+          sx={{
+            transition:'transform 1s linear',
+            position:'relative',
+            height:`${boardLength}px`,
+            width:`${boardLength}px`,
+          }}
+        >
+         {game.board.cube.map((face:BoardFace,index: number)=>{
+              return (
+                <BoardFaceDisplay
+                  boardFace={face.boardFace}
+                  faceIndex={index}
+                  sxProp={{
+                    transform:`translateZ(${index*cubeSideLength}px)`,
+                  }}
+                />
+              );
+          })}
+        </Container>
       </Container>
     </GameContext.Provider>
   );
