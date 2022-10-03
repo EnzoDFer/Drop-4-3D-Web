@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Connect-4x4/static/css/main.ead2e911.css",
+    "main.js": "/Connect-4x4/static/js/main.507bf718.js",
+    "static/js/787.b83466a3.chunk.js": "/Connect-4x4/static/js/787.b83466a3.chunk.js",
+    "index.html": "/Connect-4x4/index.html",
+    "main.ead2e911.css.map": "/Connect-4x4/static/css/main.ead2e911.css.map",
+    "main.507bf718.js.map": "/Connect-4x4/static/js/main.507bf718.js.map",
+    "787.b83466a3.chunk.js.map": "/Connect-4x4/static/js/787.b83466a3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ead2e911.css",
+    "static/js/main.507bf718.js"
+  ]
+}
