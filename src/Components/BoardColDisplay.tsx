@@ -38,7 +38,7 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
           width:`${cubeSideLength}px`
         }}
       >
-        {boardCol.map((player,index)=>{
+        {boardCol.map((player:IBoardItem,index: number)=>{
           return (
             <Cube 
               boardItem={player}
