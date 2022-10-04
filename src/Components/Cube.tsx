@@ -7,7 +7,6 @@ const PASTEL_RED = '#FF6D6A';
 export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undefined,boardItem:IBoardItem}) => {
   return (
       <Container
-        id='Cube'
         sx={{
           width:`${cubeSideLength}px`,
           height:`${cubeSideLength}px`,

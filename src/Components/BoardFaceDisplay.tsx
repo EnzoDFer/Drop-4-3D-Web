@@ -14,7 +14,7 @@ export const BoardFaceDisplay = ({sxProp,boardFace,faceIndex}:{sxProp?:Sx | (Sx 
     >
       {boardFace.map((boardCol,index)=>{
         return (
-          <BoardColDisplay 
+          <BoardColDisplay
             boardCol={boardCol}
             faceIndex={faceIndex}
             colIndex={index}
