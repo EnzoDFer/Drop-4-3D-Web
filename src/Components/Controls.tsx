@@ -33,7 +33,7 @@ export const Controls = () => {
     <Container
       sx={{
         '&+div>div':{
-          transform: transform,
+          transform: transform+' translateZ(-150px)',
         }
       }}
     >
