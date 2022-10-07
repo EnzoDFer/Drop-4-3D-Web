@@ -1,38 +1,68 @@
+import { Button, Container } from "@mantine/core";
+import { useEffect, useState } from "react";
 import GameProvider from "./GameProvider";
 
 function App() {  
+  const [rotation,setRotation] = useState('front');
+  const [transform,setTransform] = useState('');
+  let test = 'rotateY(90deg)'
+
+  useEffect(()=>{
+    console.log('new rotation'+rotation+transform);
+    
+    switch (rotation) {
+      case 'right':
+        setTransform('rotateY(-90deg)');
+        break;
+      case 'left':
+        setTransform('rotateY(90deg)');
+        break;  
+      case 'back':
+        setTransform('rotateY(180deg)');
+        break; 
+      case 'top':
+        setTransform('rotateX(-90deg)');
+        break; 
+      default:
+        //front
+        setTransform('');
+    }
+  },[rotation]);
 
   return (
-    <GameProvider/>
-    /*<Container
-      //cube Container
+    <Container
       sx={{
-        position:'relative',
-        height:`${boardLength}px`,
-        width:`${boardLength}px`,
+        height:'100%',
+        width: '100%',
+        display: 'grid',
+        gridAutoRows:'2fr 8fr'
       }}
     >
-      <BoardFaceDisplay
-        sxProp={{
-          transform:`translateZ(${0*cubeSideLength}px)`,
+      <Container
+        sx={{
+          '&+div>div':{
+            transform: transform,
+          }
         }}
-      />
-      <BoardFaceDisplay
-        sxProp={{
-          transform:`translateZ(${1*cubeSideLength}px)`,
-        }}
-      />
-      <BoardFaceDisplay
-        sxProp={{
-          transform:`translateZ(${2*cubeSideLength}px)`,
-        }}
-      />
-      <BoardFaceDisplay
-        sxProp={{
-          transform:`translateZ(${3*cubeSideLength}px)`,
-        }}
-      />
-    </Container>*/
+      >
+        <Button
+          onClick={()=>setRotation('left')}
+        >Show Left</Button>
+        <Button
+          onClick={()=>setRotation('front')}
+        >Show Front</Button>
+        <Button
+          onClick={()=>setRotation('right')}
+        >Show Right</Button>
+        <Button
+          onClick={()=>setRotation('top')}
+        >Show Top</Button>
+        <Button
+          onClick={()=>setRotation('back')}
+        >Show Back</Button>
+      </Container>
+      <GameProvider/>
+    </Container>
   );
 }
 

@@ -25,8 +25,13 @@ export function GameProvider() {
       <Container
         //scene
         sx={{
-          height:`${boardLength}px`,
-          width:`${boardLength}px`,
+          //height:`${boardLength}px`,
+          //width:`${boardLength}px`,
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          justifyContent:'center',
+          alignItems:'center',
         }}
       >
         <Container
