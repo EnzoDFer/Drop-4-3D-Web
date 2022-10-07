@@ -1,6 +1,5 @@
 import { Container, Button } from "@mantine/core";
 import { useState, useEffect } from "react";
-import GameProvider from "../GameProvider";
 
 export const Controls = () => {
   const [rotation,setRotation] = useState('front');
@@ -15,7 +14,11 @@ export const Controls = () => {
         setTransform('rotateY(90deg)');
         break;  
       case 'back':
-        setTransform('rotateY(180deg)');
+        if (transform==='rotateY(-90deg)') {
+          setTransform('rotateY(-180deg)');
+        } else if ('rotateY(90deg)') {
+          setTransform('rotateY(180deg)');
+        }
         break; 
       case 'top':
         setTransform('rotateX(-90deg)');
