@@ -1,4 +1,4 @@
-import { Container, Button } from "@mantine/core";
+import { SegmentedControl } from "@mantine/core";
 import { useState, useEffect } from "react";
 
 export const Controls = () => {
@@ -30,28 +30,23 @@ export const Controls = () => {
   },[rotation]);
   
   return (
-    <Container
+    <SegmentedControl
+      fullWidth
+      onChange={setRotation}
       sx={{
+
         '&+div>div':{
           transform: transform+' translateZ(-150px)',
         }
       }}
+      data={[
+        {label: 'Show Left', value:'left'},
+        {label: 'Show Front', value:'front'},
+        {label: 'Show Right', value:'right'},
+        {label: 'Show Top', value:'top'},
+        {label: 'Show Back', value:'back'},
+      ]}
     >
-      <Button
-        onClick={()=>setRotation('left')}
-      >Show Left</Button>
-      <Button
-        onClick={()=>setRotation('front')}
-      >Show Front</Button>
-      <Button
-        onClick={()=>setRotation('right')}
-      >Show Right</Button>
-      <Button
-        onClick={()=>setRotation('top')}
-      >Show Top</Button>
-      <Button
-        onClick={()=>setRotation('back')}
-      >Show Back</Button>
-    </Container>
+    </SegmentedControl>
   );
 }

@@ -7,6 +7,7 @@ export const BoardFaceDisplay = ({sxProp,boardFace,faceIndex}:{sxProp?:Sx | (Sx 
     <Container
       sx={{
         position:'absolute',
+        padding: '0 !important',
         height:`${boardLength}px`,
         width:`${boardLength}px`,
         ...sxProp,

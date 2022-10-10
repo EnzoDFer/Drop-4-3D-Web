@@ -12,13 +12,14 @@ export const Scene = () => {
     <Container
         //scene
         sx={{
-          height: '100%',
-          width: '100%',
+          height:`${boardLength}px`,
+          width:`${boardLength}px`,
           display: 'flex',
-          padding:'3rem',
+          padding: '0 !important',
           justifyContent:'center',
           alignItems:'center',
-          background:'white',
+          background:'transparent',
+          margin:'2rem auto 2rem auto',
         }}
       >
         <Container
@@ -26,6 +27,7 @@ export const Scene = () => {
           sx={{
             transition:'transform 2s linear',
             position:'relative',
+            padding: '0 !important',
             height:`${boardLength}px`,
             width:`${boardLength}px`,
           }}

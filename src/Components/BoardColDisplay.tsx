@@ -20,10 +20,11 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
     <Button
       sx={{
         all:'unset',
+        padding: '0 !important',
         cursor:'pointer',
         height:'fit-content',
         '&:hover':{
-          background:'white',
+          background:'rgb(211, 230, 139,.2)',
         }
 
       }}

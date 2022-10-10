@@ -22,7 +22,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           sx={{
             border:'1px solid black',
             background:boardItem===''?'transparent':
-              boardItem==='P1'?PASTEL_RED:PASTEL_BLUE,
+              boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
             height:`100%`,
