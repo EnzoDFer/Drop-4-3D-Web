@@ -36,6 +36,7 @@ export const Scene = () => {
          {game.board.cube.map((face:BoardFace,index: number)=>{
               return (
                 <BoardFaceDisplay
+                  key={`face ${index}`}
                   boardFace={face.boardFace}
                   faceIndex={index}
                   sxProp={{
