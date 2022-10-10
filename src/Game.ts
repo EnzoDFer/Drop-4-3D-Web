@@ -29,7 +29,7 @@ export class Game {
   private changeTurns(): void {
     this.player==='P1'?this.player='P2':this.player='P1';
   }
-  public updateCol(col:IBoardCol,faceIndex:number,colIndex:number,player:'P1'|'P2'){
+  public updateCol(col:IBoardCol,faceIndex:number,colIndex:number,player:'P1'|'P2'): void {
     this.board.cube[faceIndex].boardFace[colIndex] = BoardFace.dropIntoRow(col,player);
   }
   public processTurn() {

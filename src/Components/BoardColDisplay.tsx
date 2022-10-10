@@ -12,8 +12,6 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
   function handleClick() {
     if (!BoardFace.checkForFullArray(boardCol)&&!game.gameOver) {
       game.updateCol(boardCol,faceIndex,colIndex,game.player);
-      console.log(`face${faceIndex},col${colIndex}`);
-      
       setGame(new Game(game));
     }
   }
