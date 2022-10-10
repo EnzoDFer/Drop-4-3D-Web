@@ -1,5 +1,5 @@
 import { Container, Sx } from "@mantine/core";
-import { IBoardFace, boardLength } from "../Global";
+import { IBoardFace, boardLength } from "../GameClasses/Global";
 import { BoardColDisplay } from "./BoardColDisplay";
 
 export const BoardFaceDisplay = ({sxProp,boardFace,faceIndex}:{sxProp?:Sx | (Sx | undefined)[] | undefined,boardFace:IBoardFace,faceIndex:number}) => {

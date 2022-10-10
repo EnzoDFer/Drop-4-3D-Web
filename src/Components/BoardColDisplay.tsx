@@ -1,9 +1,9 @@
 import { Button, Container } from "@mantine/core";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { GameContext } from "./GameProvider";
-import { BoardFace } from "../BoardFace";
-import { Game } from "../Game";
-import { IBoardCol, boardColNum, boardLength, cubeSideLength, IBoardItem } from "../Global";
+import { BoardFace } from "../GameClasses/BoardFace";
+import { Game } from "../GameClasses/Game";
+import { IBoardCol, boardColNum, boardLength, cubeSideLength, IBoardItem } from "../GameClasses/Global";
 import { Cube } from "./Cube";
 
 export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCol,colIndex:number,faceIndex:number}) => {

@@ -1,9 +1,9 @@
 import { Container } from "@mantine/core";
 import { useContext  } from "react";
-import { BoardFace } from "../BoardFace";
+import { BoardFace } from "../GameClasses/BoardFace";
 import { BoardFaceDisplay } from "./BoardFaceDisplay";
 import { GameContext } from "./GameProvider";
-import { boardLength, cubeSideLength } from "../Global";
+import { boardLength, cubeSideLength } from "../GameClasses/Global";
 
 export const Scene = () => {
   const {game} = useContext(GameContext);

@@ -1,4 +1,4 @@
-import { Game } from "../Game";
+import { Game } from "../GameClasses/Game";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
 

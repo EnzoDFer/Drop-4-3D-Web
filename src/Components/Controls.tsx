@@ -27,7 +27,7 @@ export const Controls = () => {
         //front
         setTransform('');
     }
-  },[rotation]);
+  },[rotation, transform]);
   
   return (
     <SegmentedControl

@@ -1,5 +1,5 @@
 import { Container, Sx } from "@mantine/core";
-import { IBoardItem,cubeSideLength } from "../Global"
+import { IBoardItem,cubeSideLength } from "../GameClasses/Global"
 
 const PASTEL_BLUE = '#8BD3E6';
 const PASTEL_RED = '#FF6D6A';

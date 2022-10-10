@@ -1,9 +1,8 @@
 import { Center, Container, Text } from "@mantine/core";
 import { Controls } from "./Components/Controls";
 import { GameDisplay } from "./Components/GameDisplay";
-import GameProvider, { GameContext } from "./Components/GameProvider";
+import GameProvider from "./Components/GameProvider";
 import { Scene } from "./Components/Scene";
-import { useContext } from "react";
 
 function App() {  
 
