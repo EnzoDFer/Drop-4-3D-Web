@@ -22,7 +22,7 @@ export class Game {
     this._gameOver=won;
   }
   constructor(prevGame?:Game) {
-    this._player = prevGame?prevGame.player:'P2';
+    this._player = prevGame?prevGame.player:'P1';
     this._board = prevGame?prevGame.board:new Board();
     this._gameOver = prevGame?prevGame.gameOver:false;
   }

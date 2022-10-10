@@ -9,8 +9,10 @@ export const GameContext = createContext<{ game: Game, setGame: (newGame:Game)=>
 
 export function GameProvider({children}:{children:ReactNode}) {  
   const [game,setGame] = useState<Game>(new Game());
-
+  
   useEffect(()=>{
+    console.log(game.player);
+    
     if (!game.gameOver) {
       game.processTurn();
     }
