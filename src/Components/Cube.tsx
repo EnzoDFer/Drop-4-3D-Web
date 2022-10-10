@@ -21,7 +21,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //front
           sx={{
             border:'1px solid black',
-            background:boardItem===''?'':
+            background:boardItem===''?'transparent':
               boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
@@ -33,7 +33,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //right
           sx={{
             border:'1px solid black',
-            background:boardItem===''?'':
+            background:boardItem===''?'transparent':
               boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
@@ -45,7 +45,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //back
           sx={{
             border:'1px solid black',
-           background:boardItem===''?'':
+           background:boardItem===''?'transparent':
             boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
@@ -57,7 +57,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //left
           sx={{
             border:'1px solid black',
-           background:boardItem===''?'':
+           background:boardItem===''?'transparent':
             boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
@@ -69,7 +69,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //top
           sx={{
             border:'1px solid black',
-          background:boardItem===''?'':
+          background:boardItem===''?'transparent':
             boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,
@@ -81,7 +81,7 @@ export const Cube = ({sxProp,boardItem}:{sxProp?:Sx | (Sx | undefined)[] | undef
           //bottom
           sx={{
             border:'1px solid black',
-            background:boardItem===''?'':
+            background:boardItem===''?'transparent':
               boardItem==='P1'?PASTEL_BLUE:PASTEL_RED,
             position:'absolute',
             width:`100%`,

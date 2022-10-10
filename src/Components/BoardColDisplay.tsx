@@ -1,6 +1,6 @@
 import { Button, Container } from "@mantine/core";
-import { useContext } from "react";
-import { GameContext } from "../GameProvider";
+import { useContext, useEffect } from "react";
+import { GameContext } from "./GameProvider";
 import { BoardFace } from "../BoardFace";
 import { Game } from "../Game";
 import { IBoardCol, boardColNum, boardLength, cubeSideLength, IBoardItem } from "../Global";
@@ -17,7 +17,7 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
       setGame(new Game(game));
     }
   }
-  
+
   return (
     <Button
       sx={{

@@ -1,43 +1,30 @@
-import { BoardFace } from "./BoardFace";
-import { Game } from "./Game";
-import { createContext, useEffect, useState } from "react";
-import { BoardFaceDisplay } from "./Components/BoardFaceDisplay";
 import { Container } from "@mantine/core";
-import { boardLength, cubeSideLength } from "./Global";
+import { useContext  } from "react";
+import { BoardFace } from "../BoardFace";
+import { BoardFaceDisplay } from "./BoardFaceDisplay";
+import { GameContext } from "./GameProvider";
+import { boardLength, cubeSideLength } from "../Global";
 
+export const Scene = () => {
+  const {game} = useContext(GameContext);
 
-export const GameContext = createContext<{ game: Game, setGame: (newGame:Game)=>void }>({
-  game: new Game(),
-  setGame: ()=>{},
-});
-
-export function GameProvider() {  
-  const [game,setGame] = useState<Game>(new Game());
-
-  useEffect(()=>{
-    if (!game.gameOver) {
-    game.processTurn();
-    }
-  },[game])
-
-  return (
-    <GameContext.Provider value={{game,setGame}}>
-      <Container
+  return(
+    <Container
         //scene
         sx={{
-          //height:`${boardLength}px`,
-          //width:`${boardLength}px`,
           height: '100%',
           width: '100%',
           display: 'flex',
+          padding:'3rem',
           justifyContent:'center',
           alignItems:'center',
+          background:'white',
         }}
       >
         <Container
           //cube Container
           sx={{
-            transition:'transform 1s linear',
+            transition:'transform 2s linear',
             position:'relative',
             height:`${boardLength}px`,
             width:`${boardLength}px`,
@@ -56,9 +43,5 @@ export function GameProvider() {
           })}
         </Container>
       </Container>
-    </GameContext.Provider>
   );
 }
-
-export default GameProvider;
-
