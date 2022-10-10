@@ -1,12 +1,11 @@
-import { Container, Header } from "@mantine/core";
+import { Center, Container, Text } from "@mantine/core";
 import { Controls } from "./Components/Controls";
 import { GameDisplay } from "./Components/GameDisplay";
 import GameProvider, { GameContext } from "./Components/GameProvider";
 import { Scene } from "./Components/Scene";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 function App() {  
-  const {game} = useContext(GameContext);
 
   return (
     <GameProvider>
@@ -31,6 +30,11 @@ function App() {
           )`
         }}
       >
+        <Center>
+          <Text>
+            Connect 4x4
+          </Text>
+        </Center>
         <Controls/>
         <Scene/>
         <GameDisplay/>

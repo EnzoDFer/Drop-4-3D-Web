@@ -33,6 +33,7 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
       <Container
         //container
         sx={{
+          padding: '0 !important',
           height:`${boardLength}px`,
           width:`${cubeSideLength}px`
         }}
