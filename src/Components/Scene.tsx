@@ -11,6 +11,7 @@ export const Scene = () => {
   return(
     <Container
         //scene
+        id='scene'
         sx={{
           height:`${boardLength}px`,
           width:`${boardLength}px`,
@@ -19,7 +20,7 @@ export const Scene = () => {
           justifyContent:'center',
           alignItems:'center',
           background:'transparent',
-          margin:'2rem auto 2rem auto',
+          margin:'3rem auto 3rem auto',
         }}
       >
         <Container

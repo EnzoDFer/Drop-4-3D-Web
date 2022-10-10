@@ -1,5 +1,6 @@
 import { Center, Container, Text } from "@mantine/core";
 import { Controls } from "./Components/Controls";
+import { DimensionButton } from "./Components/DimensionButton";
 import { GameDisplay } from "./Components/GameDisplay";
 import GameProvider from "./Components/GameProvider";
 import { Scene } from "./Components/Scene";
@@ -35,6 +36,7 @@ function App() {
           </Text>
         </Center>
         <Controls/>
+        <DimensionButton/>
         <Scene/>
         <GameDisplay/>
       </Container>

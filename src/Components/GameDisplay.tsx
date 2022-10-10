@@ -25,7 +25,9 @@ export const GameDisplay = () => {
           radius='md'
           color="cyan.3"
           alt='Player 1 Icon'
-        />
+        >
+          P1
+        </Avatar>
       </Indicator>
       <Indicator  
           color="red.6" 
@@ -42,7 +44,9 @@ export const GameDisplay = () => {
           radius='md'
           color="red.6"
           alt='Player 2 Icon'
-        />
+        >
+          P2
+        </Avatar>
       </Indicator>
     </Group>
   );

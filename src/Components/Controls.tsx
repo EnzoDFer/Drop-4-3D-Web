@@ -1,5 +1,6 @@
-import { SegmentedControl } from "@mantine/core";
-import { useState, useEffect } from "react";
+import { ActionIcon, Button, Group, SegmentedControl } from "@mantine/core";
+import { useState, useEffect, useContext } from "react";
+import { GameContext } from "./GameProvider";
 
 export const Controls = () => {
   const [rotation,setRotation] = useState('front');
@@ -34,19 +35,17 @@ export const Controls = () => {
       fullWidth
       onChange={setRotation}
       sx={{
-
-        '&+div>div':{
+        '&~div[id="scene"]>div':{
           transform: transform+' translateZ(-150px)',
         }
       }}
       data={[
-        {label: 'Show Left', value:'left'},
         {label: 'Show Front', value:'front'},
+        {label: 'Show Left', value:'left'},
         {label: 'Show Right', value:'right'},
         {label: 'Show Top', value:'top'},
         {label: 'Show Back', value:'back'},
       ]}
-    >
-    </SegmentedControl>
+    />
   );
 }
