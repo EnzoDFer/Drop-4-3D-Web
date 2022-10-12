@@ -161,7 +161,6 @@ export class Game {
     if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
       this.winGame();
     }
-  
   }
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');

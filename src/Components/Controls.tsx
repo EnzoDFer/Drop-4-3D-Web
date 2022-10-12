@@ -31,9 +31,11 @@ export const Controls = () => {
   
   return (
     <SegmentedControl
+      color="dark"
       fullWidth
       onChange={setRotation}
       sx={{
+        border:'2px solid black',
         '&~div[id="scene"]>div':{
           transform: transform+' translateZ(-150px)',
         }

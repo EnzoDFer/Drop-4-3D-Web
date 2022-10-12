@@ -2,29 +2,30 @@ import { Button } from "@mantine/core";
 import { useState } from "react";
 
 export const DimensionButton = () => {
-  const [is3D,set3D] = useState(false);
+  const [is3D,set3D] = useState(true);
   
   return (
     <Button 
       variant="subtle" 
-      color="black"
+      color="dark"
       size="lg" 
       uppercase
       onClick={()=>set3D(!is3D)}
       sx={{
+        border:'2px solid black',
         display:'block',
+        background: 'white',
         textAlign:'center',
-        marginLeft:'auto',
-        marginRight:'auto',
+        margin:'2rem auto 2rem auto',
         '&:hover':{
-          background:'transparent',
+          background:'white',
         },
         '&~div[id="scene"]':{
           perspective: is3D?'1600px':'',
         }
       }}
     >
-      3D View
+      3D View Toggle
     </Button>
   );
 }

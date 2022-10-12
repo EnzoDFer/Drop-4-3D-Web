@@ -31,7 +31,15 @@ function App() {
         }}
       >
         <Center>
-          <Text>
+          <Text
+            sx={{
+              fontFamily: 'sans-serif',
+              fontSize:'2rem',
+              color:'white',
+              WebkitTextStroke:'black',
+              WebkitTextStrokeWidth:'0.8px'
+            }}
+          >
             Connect 4x4
           </Text>
         </Center>
