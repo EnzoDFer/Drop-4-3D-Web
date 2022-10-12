@@ -6,6 +6,7 @@ export class Game {
   private _player: 'P1' | 'P2';
   private _board: Board;
   private _gameOver: boolean;
+  private _winner: 'P1' |'P2'|null;
   public get player() {
     return this._player;
   }
@@ -21,10 +22,17 @@ export class Game {
   private set gameOver(won:boolean){
     this._gameOver=won;
   }
+  public get winner() {
+    return this._winner;
+  }
+  private set winner(winner:'P1' | 'P2'| null) {
+    this._winner = winner;
+  }
   constructor(prevGame?:Game) {
     this._player = prevGame?prevGame.player:'P1';
     this._board = prevGame?prevGame.board:new Board();
     this._gameOver = prevGame?prevGame.gameOver:false;
+    this._winner = null;
   }
   private changeTurns(): void {
     this.player==='P1'?this.player='P2':this.player='P1';
@@ -165,5 +173,6 @@ export class Game {
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');
     this.gameOver=true;
+    this.winner=this.player;
   }
 }

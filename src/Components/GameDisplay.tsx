@@ -93,7 +93,7 @@ export const GameDisplay = () => {
           },
         }}
       >
-        {`The winner is: ${game.player}`}
+        {`The winner is: ${game.winner}`}
       </Badge>
     </Group>
   );
