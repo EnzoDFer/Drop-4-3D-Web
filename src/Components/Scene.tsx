@@ -13,6 +13,7 @@ export const Scene = () => {
         //scene
         id='scene'
         sx={{
+          transform:`translateZ(${boardLength}px)`,
           height:`${boardLength}px`,
           width:`${boardLength}px`,
           display: 'flex',
