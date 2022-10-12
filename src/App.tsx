@@ -35,9 +35,9 @@ function App() {
             sx={{
               fontFamily: 'sans-serif',
               fontSize:'2rem',
-              color:'white',
-              WebkitTextStroke:'black',
-              WebkitTextStrokeWidth:'0.8px'
+              color:'black',
+              //WebkitTextStroke:'black',
+              //WebkitTextStrokeWidth:'0.8px'
             }}
           >
             Connect 4x4
