@@ -101,7 +101,67 @@ export class Game {
         this.winGame();
       }
     }
-    //end diag win check across mult faces
+    //Inner diagonal checks
+    //Same i-height-level inner diagonal win across mult faces check
+    for (let i = 0; i < this.board.cube[0].boardFace[0].length;i++) {
+      let playerArray = [
+        this.board.cube[0].boardFace[0][i],
+        this.board.cube[1].boardFace[1][i],
+        this.board.cube[2].boardFace[2][i],
+        this.board.cube[3].boardFace[3][i],
+      ]
+      if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+        this.winGame();
+      }
+      playerArray = [
+        this.board.cube[0].boardFace[3][i],
+        this.board.cube[1].boardFace[2][i],
+        this.board.cube[2].boardFace[1][i],
+        this.board.cube[3].boardFace[0][i],
+      ]
+      if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+        this.winGame();
+      }
+    }
+    //different i-height-level inner diagonal win across mult faces check
+    let height: number = 0;
+    let playerArray = [
+      this.board.cube[0].boardFace[0][height],
+      this.board.cube[1].boardFace[1][height+1],
+      this.board.cube[2].boardFace[2][height+2],
+      this.board.cube[3].boardFace[3][height+3],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    playerArray = [
+      this.board.cube[0].boardFace[0][3-height],
+      this.board.cube[1].boardFace[1][2-height],
+      this.board.cube[2].boardFace[2][1-height],
+      this.board.cube[3].boardFace[3][height],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    playerArray = [
+      this.board.cube[0].boardFace[3][height],
+      this.board.cube[1].boardFace[2][height+1],
+      this.board.cube[2].boardFace[1][height+2],
+      this.board.cube[3].boardFace[0][height+3],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+    playerArray = [
+      this.board.cube[0].boardFace[3][3-height],
+      this.board.cube[1].boardFace[2][2-height],
+      this.board.cube[2].boardFace[1][1-height],
+      this.board.cube[3].boardFace[0][height],
+    ]
+    if (playerArray.every((player)=>player===playerArray[0]&&player!=='')) {
+      this.winGame();
+    }
+  
   }
   private winGame() {
     console.log('Game Over! '+ this.player+' wins!');

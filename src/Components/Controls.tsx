@@ -1,6 +1,5 @@
-import { ActionIcon, Button, Group, SegmentedControl } from "@mantine/core";
-import { useState, useEffect, useContext } from "react";
-import { GameContext } from "./GameProvider";
+import { SegmentedControl } from "@mantine/core";
+import { useState, useEffect } from "react";
 
 export const Controls = () => {
   const [rotation,setRotation] = useState('front');
