@@ -1,4 +1,4 @@
-This is my go at an interactive browser-based game written with ts.
+This is my go at an interactive web game written with ts.
 
 I struggled initially with creating the 3dimensional board game 
 with individual responsive pieces.  In the end, I was able to learn a
