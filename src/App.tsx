@@ -16,8 +16,6 @@ function App() {
           margin: '0',
           maxWidth:'unset',
           padding:'2rem',
-          display:'grid',
-          gridTemplateRows:'1fr 1fr 1fr 6fr 1fr',
         }}
       >
         <Center>
