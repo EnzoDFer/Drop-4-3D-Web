@@ -13,6 +13,7 @@ function App() {
         sx={{
           height:'100%',
           width: '100%',
+          margin: '0',
           maxWidth:'unset',
           padding:'2rem',
           backgroundImage: `linear-gradient(
@@ -27,7 +28,9 @@ function App() {
             hsl(332deg 91% 73%) 78%,
             hsl(346deg 100% 72%) 89%,
             hsl(1deg 100% 71%) 100%
-          )`
+          )`,
+          display:'grid',
+          gridTemplateRows:'1fr 1fr 1fr 6fr 1fr',
         }}
       >
         <Center>

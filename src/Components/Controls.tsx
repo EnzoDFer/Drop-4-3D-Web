@@ -36,6 +36,8 @@ export const Controls = () => {
       onChange={setRotation}
       sx={{
         border:'2px solid black',
+        width:'60%',
+        margin: '1rem auto 1rem auto',
         '&~div[id="scene"]>div':{
           transform: transform+' translateZ(-150px)',
         }
