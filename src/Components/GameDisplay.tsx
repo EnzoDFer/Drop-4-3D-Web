@@ -23,6 +23,10 @@ export const GameDisplay = () => {
     <Group 
       position="center" 
       spacing="xl"
+      sx={{
+        marginTop:'1rem',
+        marginBottom:'1rem',
+      }}
     >
       <Indicator  
           color="cyan.3" 

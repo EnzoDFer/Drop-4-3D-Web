@@ -35,6 +35,22 @@ function App() {
         <DimensionButton/>
         <Scene/>
         <GameDisplay/>
+        <Center
+          sx={{
+            borderRadius:'8px',
+            border: '2px solid black',
+            width:'fit-content',
+            margin:'1rem auto 1rem auto',
+            padding: '0.2rem',
+          }}
+        >
+          <Text
+            component="a"
+            href="https://github.com/EnzoDFer/Connect-4x4"
+          >
+            Find Source Code at my github: Enzodfer
+          </Text>
+        </Center>
       </Container>
     </GameProvider>
   );

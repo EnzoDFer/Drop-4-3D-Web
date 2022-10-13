@@ -43,6 +43,7 @@ export const Controls = () => {
         '@media (max-width: 550px)':{
           display: 'grid',
           width: 'fit-content',
+          padding: '0px 4px 0px 4px',
           '&>span':{
             width:'100%'
           }
