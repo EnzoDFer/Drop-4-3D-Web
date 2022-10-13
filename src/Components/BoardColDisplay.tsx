@@ -25,8 +25,8 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
         height:'fit-content',
         '&:hover':{
           background:'rgb(211, 230, 139,.2)',
-        }
-
+        },
+        transformStyle: 'preserve-3d',
       }}
       onClick={game.gameOver?()=>{}:()=>handleClick()}
     >
@@ -35,7 +35,8 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
         sx={{
           padding: '0 !important',
           height:`${boardLength}px`,
-          width:`${cubeSideLength}px`
+          width:`${cubeSideLength}px`,
+          transformStyle: 'preserve-3d',
         }}
       >
         {boardCol.map((player:IBoardItem,index: number)=>{

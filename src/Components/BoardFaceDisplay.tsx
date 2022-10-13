@@ -10,6 +10,7 @@ export const BoardFaceDisplay = ({sxProp,boardFace,faceIndex}:{sxProp?:Sx | (Sx 
         padding: '0 !important',
         height:`${boardLength}px`,
         width:`${boardLength}px`,
+        transformStyle: 'preserve-3d',
         ...sxProp,
       }}
     >

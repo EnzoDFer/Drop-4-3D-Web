@@ -22,6 +22,7 @@ export const Scene = () => {
           alignItems:'center',
           background:'transparent',
           margin:'3rem auto 3rem auto',
+          transformStyle: 'preserve-3d',
         }}
       >
         <Container
@@ -32,6 +33,7 @@ export const Scene = () => {
             padding: '0 !important',
             height:`${boardLength}px`,
             width:`${boardLength}px`,
+            transformStyle: 'preserve-3d',
           }}
         >
          {game.board.cube.map((face:BoardFace,index: number)=>{
