@@ -28,6 +28,7 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
         },
         '&>div>span':{
           transformStyle: 'preserve-3d',
+          overflow: 'visible',
         },
         transformStyle: 'preserve-3d',
       }}
