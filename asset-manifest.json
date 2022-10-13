@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Connect-4x4/static/css/main.e0c9ec98.css",
-    "main.js": "/Connect-4x4/static/js/main.0e7dbf0e.js",
+    "main.css": "/Connect-4x4/static/css/main.f9e25063.css",
+    "main.js": "/Connect-4x4/static/js/main.c157c226.js",
     "static/js/787.b83466a3.chunk.js": "/Connect-4x4/static/js/787.b83466a3.chunk.js",
     "index.html": "/Connect-4x4/index.html",
-    "main.e0c9ec98.css.map": "/Connect-4x4/static/css/main.e0c9ec98.css.map",
-    "main.0e7dbf0e.js.map": "/Connect-4x4/static/js/main.0e7dbf0e.js.map",
+    "main.f9e25063.css.map": "/Connect-4x4/static/css/main.f9e25063.css.map",
+    "main.c157c226.js.map": "/Connect-4x4/static/js/main.c157c226.js.map",
     "787.b83466a3.chunk.js.map": "/Connect-4x4/static/js/787.b83466a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0c9ec98.css",
-    "static/js/main.0e7dbf0e.js"
+    "static/css/main.f9e25063.css",
+    "static/js/main.c157c226.js"
   ]
 }
