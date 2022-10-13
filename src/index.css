@@ -22,4 +22,5 @@ code {
   padding: 0;
   margin: 0;
   overflow: visible !important;
+  transform-style: preserve-3d;
 }

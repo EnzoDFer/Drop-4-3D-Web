@@ -26,6 +26,9 @@ export const BoardColDisplay = ({boardCol,colIndex,faceIndex}:{boardCol:IBoardCo
         '&:hover':{
           background:'rgb(211, 230, 139,.2)',
         },
+        '&>div>span':{
+          transformStyle: 'preserve-3d',
+        },
         transformStyle: 'preserve-3d',
       }}
       onClick={game.gameOver?()=>{}:()=>handleClick()}
