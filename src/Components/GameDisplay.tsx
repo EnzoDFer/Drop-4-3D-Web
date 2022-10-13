@@ -74,6 +74,7 @@ export const GameDisplay = () => {
           background: 'white',
           border: '2px solid black',
           color:'black',
+          transformStyle:'flat',
           '&:hover':{
             background:'white',
           },

@@ -13,6 +13,7 @@ export const DimensionButton = () => {
       onClick={()=>set3D(!is3D)}
       sx={{
         border:'2px solid black',
+        transformStyle:'flat',
         display:'block',
         background: 'white',
         textAlign:'center',

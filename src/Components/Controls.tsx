@@ -1,4 +1,4 @@
-import { Grid, SegmentedControl } from "@mantine/core";
+import { SegmentedControl } from "@mantine/core";
 import { useState, useEffect } from "react";
 
 export const Controls = () => {
