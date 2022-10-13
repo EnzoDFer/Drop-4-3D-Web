@@ -1,4 +1,4 @@
-import { SegmentedControl } from "@mantine/core";
+import { Grid, SegmentedControl } from "@mantine/core";
 import { useState, useEffect } from "react";
 
 export const Controls = () => {
@@ -39,6 +39,13 @@ export const Controls = () => {
         margin: '1rem auto 1rem auto',
         '&~div[id="scene"]>div':{
           transform: transform+' translateZ(-150px)',
+        },
+        '@media (max-width: 550px)':{
+          display: 'grid',
+          width: 'fit-content',
+          '&>span':{
+            width:'100%'
+          }
         }
       }}
       data={[
